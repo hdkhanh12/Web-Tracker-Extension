@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Trang Web</title>
+    <link rel="stylesheet" href="dashboard.css"> <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="global.css"> </head>
+<body>
+    <div class="container">
+        <a href="dashboard.html" class="back-link">&larr; Quay lại Dashboard</a>
+        <h1 id="siteTitle">Chi tiết cho...</h1>
+
+        <div class="card">
+            <h2>Thống Kê Nhanh (7 Ngày Qua)</h2>
+            <div id="quickStats" class="quick-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Tổng Thời Gian</span>
+                    <span id="totalTimeStat" class="stat-value">--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Trung Bình/Ngày</span>
+                    <span id="avgTimeStat" class="stat-value">--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Ngày Dùng Nhiều Nhất</span>
+                    <span id="busiestDayStat" class="stat-value">--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Tổng Lượt Truy Cập</span>
+                    <span id="totalVisitsStat" class="stat-value">--</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Phân Tích Sử Dụng Theo Ngày</h2>
+            <div class="chart-wrapper">
+                <canvas id="hourlyChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="chart.min.js"></script> <script src="transitions.js" defer></script> <script src="details.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* Thêm vào global.css hoặc dashboard.css */
+
+/* Hiệu ứng fade-in khi tải trang */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hiệu ứng fade-out khi chuyển trang */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Áp dụng fade-in cho body khi tải */
+body {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Class để kích hoạt fade-out */
+.body-fade-out {
+  animation: fadeOut 0.2s ease-in-out forwards;
+}

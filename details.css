@@ -1,0 +1,63 @@
+/* details.css */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    border-bottom: none;
+    font-size: 1.3em;
+    color: #3c4043;
+    margin-bottom: 20px;
+}
+
+/* CSS cho khu vực thống kê nhanh */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+}
+
+.stat-label {
+    font-size: 0.85em;
+    color: #5f6368;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 350px; /* Tăng chiều cao một chút cho biểu đồ */
+}

@@ -1,0 +1,226 @@
+/* dashboard.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 25px;
+    font-size: 2.3em;
+}
+
+/* Tầng 1: Chọn Thời Gian */
+.time-nav {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.time-btn {
+    padding: 10px 25px;
+    font-size: 1.1em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #5f6368;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.time-btn.active {
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+.time-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #1a73e8;
+}
+
+/* Tầng 2: Toggle Switch Chọn Chế Độ Xem */
+.view-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.view-toggle {
+    display: flex;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    padding: 4px;
+    width: 50%;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    color: #495057;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #ffffff;
+    color: #1a73e8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* Hộp tóm tắt */
+.summary-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.summary-box h3 {
+    margin: 0;
+    color: #555;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.total-time-display {
+    margin: 5px 0 0 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+/* Bảng và các phần tử khác */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Gộp đường viền */
+    border-spacing: 0; /* Bỏ khoảng trống giữa các ô */
+}
+
+/* Bỏ hết border ở đây để quản lý tập trung */
+th, td {
+    padding: 15px; /* Tăng padding một chút cho thoáng */
+    text-align: left;
+}
+
+/* Áp dụng MỘT đường kẻ DUY NHẤT cho cả hàng tiêu đề */
+thead > tr {
+    border-bottom: 2px solid #c8c8c8; /* Đậm và rõ ràng hơn */
+}
+
+/* Áp dụng MỘT đường kẻ DUY NHẤT cho MỖI HÀNG trong thân bảng */
+tbody > tr {
+    border-bottom: 1px solid #e8e8e8; /* Nhạt hơn cho các hàng dữ liệu */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s; /* Thêm transition cho background */
+}
+
+thead th {
+    background-color: #f8f9fa; /* Màu nền nhẹ cho tiêu đề */
+    font-weight: 600;
+    color: #3c4043;
+}
+
+.site-col { width: 50%; }
+
+.site-cell { display: flex; align-items: center; }
+.site-cell img { width: 16px; height: 16px; margin-right: 12px; }
+.site-cell a { text-decoration: none; color: #1a73e8; font-weight: 500; }
+.site-cell a:hover { text-decoration: underline; }
+
+tbody tr:hover {
+    transform: translateY(-4px); /* Tăng hiệu ứng trồi lên */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background-color: #fff; /* Đảm bảo nền trắng khi trồi lên */
+    /* Đường kẻ dưới sẽ tự động đi theo cả hàng, không cần định nghĩa lại */
+}
+
+/* === KẾT THÚC KHU VỰC SỬA LỖI BẢNG === */
+
+#noDataMessage { text-align: center; padding: 40px; color: #777; font-size: 1.1em; }
+.hidden { display: none; }
+
+
+#chartView {
+   margin-top: 20px;
+}
+
+/* Ẩn thanh cuộn triệt để cho toàn trang */
+
+/* Áp dụng cho Chrome, Safari, Edge */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Áp dụng cho Firefox, IE, Edge */
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* CSS cho hiệu ứng chuyển thẻ */
+
+#content-area {
+  position: relative;
+  /* Đặt một chiều cao tối thiểu để tránh trang bị "giật" khi chuyển đổi */
+  min-height: 500px; 
+}
+
+#tableView, 
+#chartView {
+  /* Thuộc tính chung cho cả hai thẻ */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  position: absolute; /* QUAN TRỌNG: Cả hai đều phải là absolute */
+  width: 100%;
+  left: 0; /* Cần thiết để căn giữa `margin: auto` hoạt động đúng */
+  right: 0;
+}
+
+/* Chỉ thu nhỏ biểu đồ KHI nó có class is-pie-chart */
+#chartView.is-pie-chart {
+  max-width: 450px;
+  max-height: 450px;
+  margin: 20px auto 0;
+}
+
+/* Trạng thái ẩn */
+#content-area .is-hidden {
+  opacity: 0;
+  transform: translateY(15px); /* Trượt nhẹ xuống dưới */
+  pointer-events: none; /* Không cho phép tương tác khi đang ẩn */
+}
+
+/* Trạng thái hiện */
+#content-area .is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

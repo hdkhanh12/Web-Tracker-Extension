@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Time Tracker</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="global.css"> <style>
+        body {
+            width: 250px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 10px;
+        }
+        #mainContent h3 {
+            color: #3367D6;
+            margin-top: 0;
+        }
+        #currentSite {
+            font-weight: bold;
+            font-size: 1.3em;
+            word-wrap: break-word;
+        }
+        #timeSpent {
+            font-size: 1.7em;
+            color: #34A853;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background-color: #4285F4;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        button:hover {
+            background-color: #3367D6;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainContent">
+        <h3>Thời gian sử dụng tại:</h3>
+        <div id="currentSite">Đang tải...</div>
+        <div id="timeSpent">--:--:--</div>
+        <hr>
+        <button id="dashboardBtn">Xem Thống Kê Chi Tiết</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống Kê Thời Gian Sử Dụng</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thống Kê Thời Gian Lướt Web</h1>
+
+        <div class="time-nav">
+            <button id="todayBtn" class="time-btn active">Hôm Nay</button>
+            <button id="weekBtn" class="time-btn">Tuần Này</button>
+        </div>
+
+        <div class="view-toggle-container">
+            <div class="view-toggle">
+                <button id="tableViewBtn" class="toggle-btn active">Thống kê</button>
+                <button id="chartViewBtn" class="toggle-btn">Biểu đồ</button>
+            </div>
+        </div>
+        
+        <div class="summary-box">
+            <h3 id="summaryTitle">Tổng Thời Gian Hôm Nay</h3>
+            <p id="totalTime" class="total-time-display">--:--:--</p>
+        </div>
+
+        <div id="content-area">
+            <div id="tableView" class="is-visible">
+                <table id="statsTable">
+                    <thead>
+                        <tr>
+                            <th class="site-col">Trang Web</th>
+                            <th>Tổng Thời Gian</th>
+                            <th>Số Lần Truy Cập</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statsBody"></tbody>
+                </table>
+                <div id="noDataMessage" class="hidden"><p>Chưa có dữ liệu.</p></div>
+            </div>
+
+            <div id="chartView" class="is-hidden">
+                <canvas id="timeChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="chart.min.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="transitions.js" defer></script>
+</body>
+</html>
